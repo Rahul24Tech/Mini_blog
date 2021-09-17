@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>AddBlog Page</title>
+{% endblock title %}
+{% block body %}
+<form action="addblog" method="POST">
+<h1 class="text-center my-3">Post Blog</h1>
+<div class="container">
+<form action="addblog.html" method="POST">
+{% csrf_token %}
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Title</label>
+  <input type="text" class="form-control" id="title" placeholder="title" name="title">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+  <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+  <input type="submit" value="Post" class="btn btn-primary my-2">
+</div>
+</div>
+</form>
+{% endblock body %}
